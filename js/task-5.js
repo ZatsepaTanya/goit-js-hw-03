@@ -10,6 +10,7 @@ const products = [
 ];
 
 const getAllPropValues = function(arr, prop) {
+    console.log(products.name);
 //   for(const key in prop){
 //       console.log(key);
 
