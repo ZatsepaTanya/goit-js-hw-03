@@ -1,7 +1,3 @@
-// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов
-//  и имя свойства. Возвращает массив значений определенного свойства prop
-//   из каждого объекта в массиве.
-
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
   { name: 'Сканер', price: 2700, quantity: 3 },
@@ -10,20 +6,17 @@ const products = [
 ];
 
 const getAllPropValues = function(arr, prop) {
-    console.log(products.name);
-//   for(const key in prop){
-//       console.log(key);
-
-//   }
-    // console.log(products.name);
-    // return products.name;
+   const array = [];
+    for(const product of arr){
+       if( prop in product){
+      array.push(product[prop]);
+    }
+  }
+return array;
 };
-
-// /*
-//  * Вызовы функции для проверки работоспособности твоей реализации.
-//  */
+ 
 console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 
-// console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
 
-// console.log(getAllPropValues(products, 'category')); // []
+console.log(getAllPropValues(products, 'category')); // []
